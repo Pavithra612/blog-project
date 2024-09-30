@@ -1,0 +1,151 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(255, 254, 252);
+    height: 100vh;
+    width: 100vw;
+}
+
+.container .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+}
+
+.header{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text{
+    color:#3c009d;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.underline{
+    width: 61px;
+    height: 6px;
+    background:#3c009d;
+    border-radius: 9px;
+}
+
+.inputs{
+    margin-top : 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height:80px;
+    background: #eaeaea;
+    border-radius: 6px;
+}
+
+.input img{
+    margin: 0px 30px;
+}
+
+.input input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline:none;
+    color: #1b0303;
+    font-size: 20px;
+}
+
+.forgot-password{
+    padding-left: 230px;
+    margin-top: 27px;
+        /* width: 61px;
+        height: 6px;
+        background:#3c009d;
+        border-radius: 9px; */
+    color: #150303;
+    font-size: 21px;
+    color: #4c00b4;
+    cursor:pointer;
+    
+}
+
+.forgot-password span{
+    color: #4c00b4;
+    cursor:pointer;
+
+}
+
+
+.sign-in{
+    padding-left: 185px;
+    margin-top: 27px;
+        /* width: 61px;
+        height: 6px;
+        background:#3c009d;
+        border-radius: 9px; */
+    color: #150303;
+    font-size: 25px;
+    color: #4c00b4;
+    cursor:pointer;
+}
+
+
+.log-in{
+    padding-left: 177px;
+    margin-top: 27px;
+        /* width: 61px;
+        height: 6px;
+        background:#3c009d;
+        border-radius: 9px; */
+    color: #150303;
+    font-size: 25px;
+    color: #4c00b4;
+    cursor:pointer;
+}
+/* 
+.si{
+
+}
+
+.lg{
+
+} */
+
+.submit-container{
+    display:flex;
+    gap:30px;
+    margin: 60px auto;
+}
+
+.submit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #3c009d;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor:pointer;
+
+}
+
+.grey{
+    background: #eaeaea;
+    color: #676767;
+}
