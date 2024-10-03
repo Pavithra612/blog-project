@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
+import {useState} from 'react'; //
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Base from "./components/Base.js";
-import About from "./components/About.js";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {About,Base} from "./components/Base.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoginSignup from "./Pages/LoginSignup.js";
 //import Signup from './Pages/Signup.js';
@@ -13,22 +13,51 @@ import DashBoard from "./Pages/DashBoard.js";
 import NavBar from "./Pages/NavBar.js";
 
 function App() {
+  const[loggedIn, setLoggedIn] = useState(false); //
+
   return (
-    <div>
-      <BrowserRouter>
+    <div className="main">
+      <Router>
+      {loggedIn && (
+          <NavBar
+            loggedIn={loggedIn}
+            setLoggedIn={setLoggedIn}
+          />
+        )} 
+  
         {/* <NavBar /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginSignup />} />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="*" element={<h1>No found!!111!</h1>} />
+        {loggedIn ? (
+          <>
+          <Route path="/" exact element={<Home />} />
+          {/* <Route path="/login" element={<LoginSignup />} /> */}
+          <Route path="/about" exact element={<AboutMe />} />
+          <Route path="/dashboard" exact element={<DashBoard />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+          </>
+        ):(
+        <Route
+        path="/login" exact element={<LoginSignup loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn} />} /> 
+        )}
+        {/* Redirect to home if the user is logged in and tries to access the auth route */}
+        <Route path="*" element={loggedIn ? (
+                <Home/>
+              ) : (
+                <LoginSignup
+                  loggedIn={loggedIn}
+                  setLoggedIn={setLoggedIn}
+                />
+              )
+            }
+          />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
 
+      
 export default App;
 
 // Bwtn DIV
@@ -38,3 +67,6 @@ export default App;
 </Base> 
 <p>----------------------------------------</p>
 <About/> */
+
+
+

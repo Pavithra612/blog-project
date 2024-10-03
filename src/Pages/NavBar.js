@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -15,7 +15,10 @@ import { PiReadCvLogo } from "react-icons/pi";
 import { TbLogout } from "react-icons/tb";
 //import { FaBookReader } from "react-icons/fa";
 
-function NavBar() {
+function NavBar( { loggedIn, setLoggedIn }) {
+  let navigate = useNavigate();
+ 
+
   return (
     <React.Fragment>
     <AppBar position="static" sx={{background:"#19199e"}}>
@@ -29,13 +32,17 @@ function NavBar() {
         {/* <Stack direction='row' spacing={2}> */}
         {/*<Box> */}
         <Tabs  textcolor="white" value={0} indicatorColor="white">
-          <Tab style={{color:'white'}} label="Read Blogs"/>
-          <Tab style={{color:'white'}} label="Dashboard"/>
-          <Tab style={{color:'white'}} label="About Me"/>
-          </Tabs>
-          <IconButton edge="start" color="inherit" aria-label="logo">
+          <Tab style={{color:'white'}} label="Read Blogs" onClick={()=> navigate('/')}/>
+          <Tab style={{color:'white'}} label="Dashboard"onClick={()=>navigate('/dashboard')} />
+          <Tab style={{color:'white'}} label="About Me" onClick={()=>navigate('/about')} />
+        </Tabs>
+          <IconButton edge="start" color="inherit" aria-label="logo" onClick={() => {
+                setLoggedIn(false);
+                navigate('/login');
+              }}>
           <TbLogout size="2.1rem"/>
           </IconButton>
+          
           {/* <Button color="inherit">Read Blogs</Button>
           <Button color="inherit">DashBoard</Button>
           <Button color="inherit">About Me</Button> */}
@@ -43,22 +50,7 @@ function NavBar() {
         {/* </Stack> */}
       </Toolbar>
     </AppBar>
-    {/* <ul>
-
-        <li>
-          <NavLink to="/about">AboutMe</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard">DashBoard</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Login">LoginSignup</NavLink>
-        </li>
-      </ul> */}
-    </React.Fragment>
+  </React.Fragment>
   );
 }
 export default NavBar;
