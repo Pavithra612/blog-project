@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="*" element={<h1>No found!!!</h1>} />
+          <Route path="*" element={<h1>No found!!111!</h1>} />
         </Routes>
       </BrowserRouter>
     </div>
