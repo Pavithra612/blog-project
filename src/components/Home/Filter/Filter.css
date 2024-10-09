@@ -1,0 +1,36 @@
+.searchBar-wrap {
+  background-color: #f0f0f0;
+  width: 25%;
+  margin: 2.5rem auto 4rem auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.searchBar-wrap form {
+  display: flex;
+  justify-content: space-between; /* Aligns button at the end */
+  align-items: center;
+}
+
+.searchBar-wrap input {
+  background-color: #f0f0f0;
+  outline: none;
+  border: none;
+  flex: 1; /* Input will take all remaining space */
+  padding-right: 0.5rem; /* Add some space between input and button */
+}
+
+.searchBar-wrap span {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.searchBar-wrap button {
+  outline: none;
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  background-color: #0f52ba;
+  color: #ffffff;
+  margin-left: 0.5rem; /* Add margin to separate from input */
+}

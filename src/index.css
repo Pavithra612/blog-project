@@ -1,12 +1,12 @@
-body{
+.main{
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100vh;
-    background: linear-gradient(#5aa0fc, #19199e);
+    background-color: hsl(0, 0%, 100%); /* we put !important to prioritize this over default css properties ( background ) from material UI*/
+    /* background: linear-gradient(rgb(16, 29, 113), #73768e); */
 }
-
 
 code{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
