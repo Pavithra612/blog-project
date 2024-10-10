@@ -1,0 +1,32 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem; /* Position the button at the bottom */
+  }
+  
+  .create-post-button {
+    background-color: #0f52ba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-post-button:hover {
+    background-color: #0b3d8e; /* Darker shade on hover */
+  }
+  

@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import {useState} from 'react'; //
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,9 +11,12 @@ import Home from "./Pages/Home.js";
 import AboutMe from "./Pages/AboutMe.js";
 import DashBoard from "./Pages/DashBoard.js";
 import NavBar from "./Pages/NavBar.js";
+import Blogs from "./Pages/Blogs.js";
+import Header from "./components/Home/Header/Header.js";
+import Create_Blog from "./Pages/Create_Blog.js";
 
 function App() {
-  const[loggedIn, setLoggedIn] = useState(false); //
+  const[loggedIn, setLoggedIn] = useState(false); //changed the state from false to true
 
   return (
     <div className="main">
@@ -29,11 +32,14 @@ function App() {
         <Routes>
         {loggedIn ? (
           <>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home/>}/>
+          <Route path="/blog/:id" exact element={<Blogs/>} /> 
           {/* <Route path="/login" element={<LoginSignup />} /> */}
           <Route path="/about" exact element={<AboutMe />} />
           <Route path="/dashboard" exact element={<DashBoard />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/Create_Blog" exact element={<Create_Blog />} />
+
+          <Route path="*" element={<h1>Page Not Found</h1>} />
           </>
         ):(
         <Route
